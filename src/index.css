@@ -71,7 +71,7 @@ body{
     display: flex;
     height: 40px;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 10px;
     transition: .2s ease;
     width: 40px;
     color: white;

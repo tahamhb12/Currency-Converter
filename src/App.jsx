@@ -14,6 +14,7 @@ const App = () => {
   const [from,setfrom] = useState("")
   const [to,setto] = useState("")
   const [amount2,setamount2] = useState("")
+  const [loading,setloading] = useState(false)
 
   useEffect(() => {
     axios.get("https://v6.exchangerate-api.com/v6/9628faf303ed95b833682b86/latest/USD")
@@ -21,12 +22,16 @@ const App = () => {
   }, []);
 
   const calculate = () =>{
-    const exchange_rate = currencies[sec]/currencies[first]
-    const res = amount*exchange_rate
-    setfrom(first)
-    setto(sec)
-    setamount2(amount)
-    setresult(String(res))
+      setloading(true)
+      const exchange_rate = currencies[sec]/currencies[first]
+      const res = amount*exchange_rate
+      setfrom(first)
+      setto(sec)
+      setamount2(amount)
+      setresult(String(res))
+      setTimeout(() => {
+        setloading(false)
+      }, 200);
   }
 
 
@@ -74,7 +79,10 @@ const App = () => {
           </div>
         </div>
         <button onClick={calculate}>Get Exchange Rate</button>
-        <div className="result">{result?amount2 +" "+from+ " = " +result.slice(0,4)+" "+ to:""}</div>
+        {!loading ? <div className="result">{result?amount2 +" "+from+ " = " +result.slice(0,4)+" "+ to:""}</div>
+        :
+        <div className="result">Gee</div>}
+
       </div>
     </div>
   );
