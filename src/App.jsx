@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Flag from "react-world-flags";
 
 const App = () => {
 
@@ -55,6 +56,7 @@ const App = () => {
               </option>
             ))}
             </select>
+            <Flag className="flag" code={first.slice(0,2)} height={16}/>
           </div>
           <div onClick={switchCurrency} className="shape">
             <i class="fa-solid fa-arrow-right-arrow-left"></i>
@@ -68,6 +70,7 @@ const App = () => {
               </option>
             ))}
             </select>
+            <Flag className="flag" code={sec.slice(0,2)} height={16}/>
           </div>
         </div>
         <button onClick={calculate}>Get Exchange Rate</button>
