@@ -81,8 +81,7 @@ const App = () => {
         <button onClick={calculate}>Get Exchange Rate</button>
         {!loading ? <div className="result">{result?amount2 +" "+from+ " = " +result.slice(0,4)+" "+ to:""}</div>
         :
-        <div className="result">Gee</div>}
-
+        <div className="result">Getting Exchange Rate...</div>}
       </div>
     </div>
   );
