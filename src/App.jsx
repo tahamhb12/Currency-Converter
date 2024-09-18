@@ -28,7 +28,7 @@ const App = () => {
       setfrom(first)
       setto(sec)
       setamount2(amount)
-      setresult(String(res))
+      setresult(res)
       setTimeout(() => {
         setloading(false)
       }, 200);
@@ -39,8 +39,6 @@ const App = () => {
     setFirst(sec)
     setSec(first)
   }
-
-
 
 
   return (
@@ -79,7 +77,7 @@ const App = () => {
           </div>
         </div>
         <button onClick={calculate}>Get Exchange Rate</button>
-        {!loading ? <div className="result">{result?amount2 +" "+from+ " = " +result.slice(0,4)+" "+ to:""}</div>
+        {!loading ? <div className="result">{result?amount2 +" "+from+ " = " + result.toFixed(2) +" "+ to:""}</div>
         :
         <div className="result">Getting Exchange Rate...</div>}
       </div>
