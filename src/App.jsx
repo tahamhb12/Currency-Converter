@@ -49,7 +49,7 @@ const App = () => {
       <div className="form_converter">
         <div className="amount">
           <p>Enter Amount</p>
-          <input type="text" placeholder="Enter Amount..." onChange={(e)=>setamount(e.target.value)}/>
+          <input type="number" placeholder="Enter Amount..." onChange={(e)=>setamount(e.target.value)}/>
         </div>
         <div className="from_to">
           <div className="from">
